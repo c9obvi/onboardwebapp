@@ -6,7 +6,10 @@ body{font-family:Inter,system-ui,sans-serif;background:var(--bg-primary);color:v
 .hero{position:relative;background:var(--surface-1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:var(--space-xl);margin-bottom:var(--space-2xl);overflow:hidden;max-width:900px;margin-left:auto;margin-right:auto}
 @media (max-width:768px){.hero{padding:var(--space-lg);max-width:100%}}
 .hero::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-primary);opacity:.6}
-.hero-badge{display:inline-flex;align-items:center;gap:var(--space-xs);background:rgba(242,169,0,.1);border:1px solid rgba(242,169,0,.2);color:var(--accent-gold);padding:var(--space-xs) var(--space-md);border-radius:2rem;font-size:.875rem;font-weight:600;letter-spacing:.025em;margin-bottom:var(--space-lg)}
+.hero-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-lg)}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--space-xs);background:rgba(242,169,0,.1);border:1px solid rgba(242,169,0,.2);color:var(--accent-gold);padding:var(--space-xs) var(--space-md);border-radius:2rem;font-size:.875rem;font-weight:600;letter-spacing:.025em}
+.hero-logo{width:50px;height:50px;opacity:.9;transition:opacity .2s ease}
+.hero-logo:hover{opacity:1}
 .hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.05;margin-bottom:var(--space-lg);color:var(--text-primary)}
 /* Responsive title layout to avoid awkward gaps */
 .hero-title{display:flex;flex-wrap:wrap;gap:.25ch;align-items:baseline}

@@ -45,7 +45,14 @@ export default function App() {
   return (
     <div className="container">
       <section className="hero">
-        <div className="hero-badge">Hashbranch Customer Onboarding</div>
+        <div className="hero-header">
+          <div className="hero-badge">Hashbranch Customer Onboarding</div>
+          <img 
+            src="https://ukzotulynoiiqwkbvjyo.supabase.co/storage/v1/object/public/cdn2/hash%20branch%2050x50%20logo.svg" 
+            alt="Hashbranch Logo" 
+            className="hero-logo"
+          />
+        </div>
         <h1 className="hero-title">
           <span className="title-prefix">Welcome to </span>
           <AnimatedWord />
