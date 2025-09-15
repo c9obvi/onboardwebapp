@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import ProgressNav from './components/ProgressNav.jsx'
+import NiceHashSetupWizard from './components/NiceHashSetupWizard.jsx'
 import { Requirements, Scenarios, Deployment, Monitoring,  AltMining,  usePageEffects } from './components/Sections.jsx'
 
 const words = ['American','Simple','Secure','Flexible','Profitable','Extended','Efficient',]
@@ -42,6 +43,21 @@ function AnimatedWord() {
 
 export default function App() {
   usePageEffects()
+  const [selectedScenario, setSelectedScenario] = useState(null)
+  const [isWizardOpen, setIsWizardOpen] = useState(false)
+
+  const handleScenarioSelect = (scenario) => {
+    setSelectedScenario(scenario)
+  }
+
+  const handleOpenWizard = () => {
+    setIsWizardOpen(true)
+  }
+
+  const handleCloseWizard = () => {
+    setIsWizardOpen(false)
+  }
+
   return (
     <div className="container">
       <section className="hero">
@@ -68,12 +84,14 @@ export default function App() {
         <ProgressNav />
         <main>
           <Requirements />
-          <Scenarios />
+          <Scenarios onScenarioSelect={handleScenarioSelect} selectedScenario={selectedScenario} />
           <Deployment />
           <Monitoring />
-          <AltMining />
+          <AltMining onOpenWizard={handleOpenWizard} />
         </main>
       </div>
+      
+      <NiceHashSetupWizard isOpen={isWizardOpen} onClose={handleCloseWizard} />
     </div>
   )
 }

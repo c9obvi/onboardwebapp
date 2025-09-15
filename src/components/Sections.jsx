@@ -38,12 +38,20 @@ export function Requirements() {
   )
 }
 
-export function Scenarios() {
+export function Scenarios({ onScenarioSelect, selectedScenario }) {
   const [selected, setSelected] = useState(null)
+
+  const handleScenarioSelect = (scenario) => {
+    setSelected(scenario)
+    onScenarioSelect(scenario)
+  }
+
+  // Use the prop if available, otherwise use local state
+  const currentSelection = selectedScenario !== null ? selectedScenario : selected
 
   // After a scenario is chosen, reveal the process section and scroll to it
   useEffect(() => {
-    if (selected !== null) {
+    if (currentSelection !== null) {
       const el = document.getElementById('process')
       if (el) {
         // Delay to allow DOM to paint the newly shown section
@@ -52,28 +60,36 @@ export function Scenarios() {
         })
       }
     }
-  }, [selected])
+  }, [currentSelection])
 
   return (
     <section id="scenarios" className="content-section">
-      <div className="
-      section-header">
+      <div className="section-header">
         <h2 className="section-title">What's Your Current Situation?</h2>
         <p className="section-subtitle">Choose the path that describes where your ASICs are today</p>
+        {!currentSelection && (
+          <div className="selection-prompt">
+            <span className="prompt-icon">👆</span>
+            <span className="prompt-text">Click on one of the options below to continue</span>
+          </div>
+        )}
       </div>
       <div className="scenario-grid">
         {[1,2,3].map((n) => (
-          <div key={n} className={`scenario-card ${selected===n?'selected':''}`} onClick={() => setSelected(n)}>
+          <div key={n} className={`scenario-card ${currentSelection===n?'selected':''} ${!currentSelection?'unselected':''}`} onClick={() => handleScenarioSelect(n)}>
             <div className="scenario-number">{n}</div>
             <h3 className="scenario-title">{n===1? 'I Own My ASICs' : n===2? 'Currently Hosted Elsewhere' : 'Buying Through Hashbranch'}</h3>
             <p className="scenario-description">{n===1? 'Your miners are currently with you, in storage, or ready to ship to our facility.' : n===2? 'Your ASICs are running at another hosting facility and you want to move them to Hashbranch.' : 'You\'re purchasing new ASICs through our procurement service for direct deployment.'}</p>
+            <div className="scenario-cta">
+              {currentSelection === n ? '✓ Selected' : 'Click to select'}
+            </div>
           </div>
         ))}
       </div>
 
-      <section id="process" className="content-section" style={{display: selected? 'block':'none'}}>
+      <section id="process" className="content-section">
         {/* Scenario 1 */}
-        <div className={`scenario-content ${selected===1?'active':''}`}> 
+        <div className={`scenario-content ${currentSelection===1?'active':''}`}> 
           <div className="section-header">
             <h2 className="section-title">Shipping Your ASICs to Our Facility</h2>
             <p className="section-subtitle">Step-by-step guide for customers with ASICs ready to ship</p>
@@ -108,7 +124,7 @@ Special notes: [any special handling requirements]`}</pre>
         </div>
 
         {/* Scenario 2 */}
-        <div className={`scenario-content ${selected===2?'active':''}`}>
+        <div className={`scenario-content ${currentSelection===2?'active':''}`}>
           <div className="section-header">
             <h2 className="section-title">Moving ASICs From Another Facility</h2>
             <p className="section-subtitle">Coordinated transfer from your current hosting provider to Hashbranch</p>
@@ -140,7 +156,7 @@ Date: ________________`}</pre>
         </div>
 
         {/* Scenario 3 */}
-        <div className={`scenario-content ${selected===3?'active':''}`}>
+        <div className={`scenario-content ${currentSelection===3?'active':''}`}>
           <div className="section-header">
             <h2 className="section-title">ASICs Purchased Through Hashbranch</h2>
             <p className="section-subtitle">End-to-end procurement and deployment - we handle all the logistics</p>
@@ -153,7 +169,7 @@ Date: ________________`}</pre>
             </div>
           </div>
         </div>
-      </section>
+        </section>
     </section>
   )
 }
@@ -208,7 +224,7 @@ export function Monitoring() {
   )
 }
 
-export function AltMining() {
+export function AltMining({ onOpenWizard }) {
   return (
     <section id="alt" className="content-section">
       <div className="section-header">
@@ -221,9 +237,20 @@ export function AltMining() {
         <div className="callout-content">
           <div className="callout-title">Recommendation: NiceHash</div>
           <div>
-            For Scrypt mining, we recommend using <a className="web-app-link" href="https://www.nicehash.com" target="_blank" rel="noreferrer">NiceHash</a>.
+            For Scrypt mining, we recommend using <a className="web-app-link" href="https://support.hashbranch.com/hc/en-us/articles/40927210527380-NiceHash-Set-up-Guide" target="_blank" rel="noreferrer">NiceHash</a>.
             It provides a simple setup experience, broad buyer liquidity, and automatic payouts in BTC.
           </div>
+        </div>
+      </div>
+
+      <div className="wizard-trigger-section">
+        <div className="wizard-trigger-content">
+          <h3>Need Help Getting Started?</h3>
+          <p>Follow our step-by-step guide to set up NiceHash with your ASIC miner.</p>
+          <button className="wizard-trigger-btn" onClick={onOpenWizard}>
+            <span className="wizard-icon">🧙‍♂️</span>
+            Launch Setup Wizard
+          </button>
         </div>
       </div>
 
