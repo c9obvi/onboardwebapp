@@ -4,10 +4,13 @@ html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
 .container{max-width:1200px;margin:0 auto;padding:var(--space-lg)}
 .hero{position:relative;background:var(--surface-1);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:var(--space-xl);margin-bottom:var(--space-2xl);overflow:hidden;max-width:900px;margin-left:auto;margin-right:auto}
-@media (max-width:768px){.hero{padding:var(--space-lg);max-width:100%}}
+@media (max-width:768px){
+  .hero{padding:var(--space-lg);max-width:100%}
+  .hero-badge{padding:4px 8px;font-size:.8rem;border-radius:1rem}
+}
 .hero::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-primary);opacity:.6}
 .hero-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-lg)}
-.hero-badge{display:inline-flex;align-items:center;gap:var(--space-xs);background:rgba(242,169,0,.1);border:1px solid rgba(242,169,0,.2);color:var(--accent-gold);padding:var(--space-xs) var(--space-md);border-radius:2rem;font-size:.875rem;font-weight:600;letter-spacing:.025em}
+.hero-badge{display:inline-flex;align-items:center;gap:var(--space-xs);background:rgba(242,169,0,.1);border:1px solid rgba(242,169,0,.2);color:var(--accent-gold);padding:6px 12px;border-radius:1.5rem;font-size:.875rem;font-weight:600;letter-spacing:.025em;white-space:nowrap}
 .hero-logo{width:50px;height:50px;opacity:.9;transition:opacity .2s ease}
 .hero-logo:hover{opacity:1}
 .hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.05;margin-bottom:var(--space-lg);color:var(--text-primary)}

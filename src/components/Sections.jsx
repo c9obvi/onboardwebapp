@@ -192,7 +192,7 @@ export function Deployment() {
   )
 }
 
-export function Monitoring() {
+export function Monitoring({ onOpenLuxorWizard }) {
   return (
     <section id="monitoring" className="content-section">
       <div className="section-header">
@@ -219,6 +219,17 @@ export function Monitoring() {
         <ChecklistItem icon={<span>✔️</span>} title="Luxor Sub-Account Creation" details="We create your personalized sub-account and send an invitation to your specified email address" />
         <ChecklistItem icon={<span>✔️</span>} title="Real-Time Dashboard" details="Monitor your workers, hashrate performance, and earning history through your personal dashboard" />
         <ChecklistItem icon={<span>✔️</span>} title="Flexible Payout Schedule" details="Choose weekly payouts (recommended to minimize transaction fees) or daily based on your preference" />
+      </div>
+
+      <div className="wizard-trigger-section">
+        <div className="wizard-trigger-content">
+          <h3>Need Help with Luxor Setup?</h3>
+          <p>Follow our step-by-step guide to set up your Luxor sub-account and configure payouts.</p>
+          <button className="wizard-trigger-btn" onClick={onOpenLuxorWizard}>
+            <span className="wizard-icon">🏗️</span>
+            Launch Luxor Setup Wizard
+          </button>
+        </div>
       </div>
     </section>
   )

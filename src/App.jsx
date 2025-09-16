@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import ProgressNav from './components/ProgressNav.jsx'
 import NiceHashSetupWizard from './components/NiceHashSetupWizard.jsx'
+import LuxorSetupWizard from './components/LuxorSetupWizard.jsx'
 import { Requirements, Scenarios, Deployment, Monitoring,  AltMining,  usePageEffects } from './components/Sections.jsx'
 
 const words = ['American','Simple','Secure','Flexible','Profitable','Extended','Efficient',]
@@ -45,6 +46,7 @@ export default function App() {
   usePageEffects()
   const [selectedScenario, setSelectedScenario] = useState(null)
   const [isWizardOpen, setIsWizardOpen] = useState(false)
+  const [isLuxorWizardOpen, setIsLuxorWizardOpen] = useState(false)
 
   const handleScenarioSelect = (scenario) => {
     setSelectedScenario(scenario)
@@ -56,6 +58,14 @@ export default function App() {
 
   const handleCloseWizard = () => {
     setIsWizardOpen(false)
+  }
+
+  const handleOpenLuxorWizard = () => {
+    setIsLuxorWizardOpen(true)
+  }
+
+  const handleCloseLuxorWizard = () => {
+    setIsLuxorWizardOpen(false)
   }
 
   return (
@@ -86,12 +96,13 @@ export default function App() {
           <Requirements />
           <Scenarios onScenarioSelect={handleScenarioSelect} selectedScenario={selectedScenario} />
           <Deployment />
-          <Monitoring />
+          <Monitoring onOpenLuxorWizard={handleOpenLuxorWizard} />
           <AltMining onOpenWizard={handleOpenWizard} />
         </main>
       </div>
       
       <NiceHashSetupWizard isOpen={isWizardOpen} onClose={handleCloseWizard} />
+      <LuxorSetupWizard isOpen={isLuxorWizardOpen} onClose={handleCloseLuxorWizard} />
     </div>
   )
 }
