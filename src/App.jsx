@@ -69,20 +69,18 @@ export default function App() {
   }
 
   return (
-    <div className="container">
+    <>
       <section className="hero">
         <div className="hero-header">
-          <div className="hero-badge">Hashbranch Customer Onboarding</div>
-          <img 
-            src="https://ukzotulynoiiqwkbvjyo.supabase.co/storage/v1/object/public/cdn2/hash%20branch%2050x50%20logo.svg" 
-            alt="Hashbranch Logo" 
-            className="hero-logo"
-          />
+          <div className="hero-logo-text">
+            <span className="logo-hash">Hash</span>
+            <span className="logo-branch">branch</span>
+            <span className="logo-onboarding"> Onboarding</span>
+          </div>
         </div>
         <h1 className="hero-title">
           <span className="title-prefix">Welcome to </span>
           <AnimatedWord />
-          <br className="title-break" />
           <span className="title-suffix">ASIC Hosting</span>
         </h1>
         <p>
@@ -90,19 +88,21 @@ export default function App() {
         </p>
       </section>
 
-      <div className="main-layout">
-        <ProgressNav />
-        <main>
-          <Requirements />
-          <Scenarios onScenarioSelect={handleScenarioSelect} selectedScenario={selectedScenario} />
-          <Deployment />
-          <Monitoring onOpenLuxorWizard={handleOpenLuxorWizard} />
-          <AltMining onOpenWizard={handleOpenWizard} />
-        </main>
+      <div className="container">
+        <div className="main-layout">
+          <ProgressNav />
+          <main>
+            <Requirements />
+            <Scenarios onScenarioSelect={handleScenarioSelect} selectedScenario={selectedScenario} />
+            <Deployment />
+            <Monitoring onOpenLuxorWizard={handleOpenLuxorWizard} />
+            <AltMining onOpenWizard={handleOpenWizard} />
+          </main>
+        </div>
       </div>
       
       <NiceHashSetupWizard isOpen={isWizardOpen} onClose={handleCloseWizard} />
       <LuxorSetupWizard isOpen={isLuxorWizardOpen} onClose={handleCloseLuxorWizard} />
-    </div>
+    </>
   )
 }

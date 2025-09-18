@@ -12,7 +12,10 @@ export default function ProgressNav() {
     { id: 'monitoring', label: 'Start Mining', number: 5 },
     { id: 'alt', label: 'Alt/Scrypt Mining', number: 6 }
   ]
-  const steps = baseSteps.filter(s => s.id !== 'process' || isProcessVisible)
+  const steps = baseSteps.filter(s => s.id !== 'process' || isProcessVisible).map((step, index) => ({
+    ...step,
+    number: index + 1
+  }))
 
   useEffect(() => {
     const handleActiveStep = () => {
@@ -25,16 +28,20 @@ export default function ProgressNav() {
         setIsProcessVisible(processVisible)
       }
 
+      // Use the filtered steps array that matches what's actually rendered
       const visibleSteps = baseSteps.filter(s => s.id !== 'process' || processVisible)
 
       visibleSteps.forEach((step, index) => {
         const el = document.getElementById(step.id)
         if (!el || el.offsetHeight < 1) return
-        const top = el.offsetTop
-        const bottom = top + el.offsetHeight
-        if (y >= top && y < bottom) {
+        const rect = el.getBoundingClientRect()
+        const top = rect.top + window.scrollY
+        const bottom = top + rect.height
+        
+        // Check if we're in this section (with some buffer)
+        if (y >= top - 50 && y < bottom - 50) {
           currentIndex = index
-        } else if (y >= bottom) {
+        } else if (y >= bottom - 50) {
           // If scrolled past, tentatively set to this step; later ones may override
           currentIndex = index
         }

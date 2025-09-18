@@ -16,10 +16,9 @@ const LuxorSetupWizard = ({ isOpen, onClose }) => {
           <p>Sign up with Luxor and complete account verification.</p>
           <div className="step-instructions">
             <div className="quick-links">
-              <h4>Quick Links:</h4>
+              <h4>Get Started:</h4>
               <ul>
-                <li><a href="https://mining.luxor.tech/signup" target="_blank" rel="noreferrer">Sign up for Luxor</a></li>
-                <li><a href="https://mining.luxor.tech/" target="_blank" rel="noreferrer">Luxor Dashboard</a></li>
+                <li><a href="https://sso.luxor.tech/en/login" target="_blank" rel="noreferrer">Sign up for Luxor</a></li>
               </ul>
             </div>
             <ol>

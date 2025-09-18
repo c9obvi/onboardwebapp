@@ -19,7 +19,7 @@ const NiceHashSetupWizard = ({ isOpen, onClose }) => {
               <h4>Quick Links:</h4>
               <ul>
                 <li><a href="https://www.nicehash.com/my/register" target="_blank" rel="noreferrer">Sign up for NiceHash</a></li>
-                <li><a href="https://www.nicehash.com/" target="_blank" rel="noreferrer">NiceHash Dashboard</a></li>
+                <li><a href="https://www.nicehash.com/" target="_blank" rel="noreferrer">NiceHash Website</a></li>
               </ul>
             </div>
             <ol>
