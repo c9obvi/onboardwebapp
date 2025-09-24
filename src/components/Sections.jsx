@@ -31,7 +31,7 @@ export function Requirements() {
         <div className="callout-icon">🔐</div>
         <div className="callout-content">
           <div className="callout-title">Critical Security Notice</div>
-          <div><strong>Never send us your seed phrases, private keys, or 2FA codes.</strong> We only need your Bitcoin receive address for payouts. If anyone claiming to be Hashbranch asks for private information, <strong>do not share it</strong> — contact logistics@hashbranch.com immediately to verify.</div>
+          <div><strong>Never send us your seed phrases, private keys, or 2FA codes.</strong> We only need your Bitcoin receive address for payouts. If anyone claiming to be Hashbranch asks for private information, <strong>do not share it</strong> — contact logistics@hashbranch.com or Brandon.luedtke@hashbranch.com (Head of Logistics) immediately to verify.</div>
         </div>
       </div>
     </section>

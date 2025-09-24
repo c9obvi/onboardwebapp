@@ -427,6 +427,12 @@
   text-decoration: underline;
 }
 
+.contact-role {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
 .wizard-footer {
   display: flex;
   justify-content: space-between;

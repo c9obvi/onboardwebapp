@@ -129,6 +129,11 @@ const NiceHashSetupWizard = ({ isOpen, onClose }) => {
                 <span className="contact-icon">📧</span>
                 <a href="mailto:hello@hashbranch.com">hello@hashbranch.com</a>
               </div>
+              <div className="contact-item">
+                <span className="contact-icon">📧</span>
+                <a href="mailto:Brandon.luedtke@hashbranch.com">Brandon.luedtke@hashbranch.com</a>
+                <span className="contact-role">(Head of Logistics)</span>
+              </div>
             </div>
             <p>We're here to help with:</p>
             <ul>

@@ -45,7 +45,8 @@ const LuxorSetupWizard = ({ isOpen, onClose }) => {
             <div className="contact-info">
               <h4>Send us your information:</h4>
               <ul>
-                <li><strong>Email:</strong> <a href="mailto:hello@hashbranch.com">hello@hashbranch.com</a></li>
+                <li><strong>Email:</strong>Your account manager and   ⬇️</li>
+                <li><strong>Head of Logistics:</strong> <a href="mailto:Brandon.luedtke@hashbranch.com">Brandon.luedtke@hashbranch.com</a></li>
                 <li><strong>Subject:</strong> "Luxor Sub-Account Setup"</li>
               </ul>
             </div>
@@ -140,6 +141,7 @@ const LuxorSetupWizard = ({ isOpen, onClose }) => {
             <div className="contact-info">
               <h4>Need Help? We're Here!</h4>
               <p><strong>Email:</strong> <a href="mailto:hello@hashbranch.com">hello@hashbranch.com</a></p>
+              <p><strong>Head of Logistics:</strong> <a href="mailto:Brandon.luedtke@hashbranch.com">Brandon.luedtke@hashbranch.com</a></p>
               <p><strong>Services:</strong> Pool optimization, hardware monitoring, payout assistance, and 24/7 support</p>
               <div className="step-tip">
                 <strong>💡 Pro Tip:</strong> Bookmark your Luxor dashboard and set up notifications for payout confirmations.
