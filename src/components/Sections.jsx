@@ -126,10 +126,10 @@ Special notes: [any special handling requirements]`}</pre>
           <h2 className="section-title">Moving ASICs From Another Facility</h2>
           <p className="section-subtitle">Coordinated transfer from your current hosting provider to Hashbranch</p>
           <div className="checklist">
-            <ChecklistItem title="Prepare Your Asset List" details="Same format as Scenario 1 - we need to know exactly what equipment to expect" />
-            <ChecklistItem title="Current Facility Details" details="Contact person, email, phone number, and full facility address where your ASICs are currently hosted" />
+            <ChecklistItem title="Choose Freight Coordinator" details="Decide if Hashbranch handles pickup or your current facility arranges shipping. If Hashbranch, provide the following information:" />
+            <ChecklistItem title="Asset List" details={<span>Same format as Scenario 1 with all your ASIC details<br/><strong>Insurance Coverage:</strong> What type of coverage do you want for shipping and handling?<br/>• Standard $100K coverage<br/>• If over $100K cargo value, confirm you want coverage for the total value of your assets (Depending on total value, this can add a decent amount to the total cost)</span>} />
+            <ChecklistItem title="Current Facility Details" details={<span>Contact person, email, phone number, and full facility address where your ASICs are currently hosted<br/><strong>If readily available, provide:</strong><br/>• Dimensions and total weight (LxWxH)<br/>• How is it packed? Palletized, loose boxes, etc<br/>• Equipment type requirements? Liftgate, pallet jack, high dock, etc</span>} />
             <ChecklistItem title="Signed Authorization Letter" details="Use our template below to authorize equipment release to Hashbranch" />
-            <ChecklistItem title="Choose Freight Coordinator" details="Decide if Hashbranch handles pickup coordination or if your current facility will arrange shipping" />
           </div>
           <div className="code-block">
             <div className="code-header"><div className="code-title">Letter of Authorization Template</div><button className="copy-btn" data-copy-target="#template2">Copy</button></div>
