@@ -71,21 +71,28 @@ export default function App() {
   return (
     <>
       <section className="hero">
-        <div className="hero-header">
-          <div className="hero-logo-text">
-            <span className="logo-hash">Hash</span>
-            <span className="logo-branch">branch</span>
-            <span className="logo-onboarding"> Onboarding</span>
-          </div>
+        {/* Spline Background */}
+        <div className="hero-background">
+          <spline-viewer url="https://prod.spline.design/iKpiUbaWiN57l1EE/scene.splinecode"></spline-viewer>
         </div>
-        <h1 className="hero-title">
-          <span className="title-prefix">Welcome to </span>
-          <AnimatedWord />
-          <span className="title-suffix">ASIC Hosting</span>
-        </h1>
-        <p>
-          Your journey from hardware ownership to profitable mining starts here. We'll guide you through our secure, streamlined process to get your ASICs deployed and hashing in our enterprise facility.
-        </p>
+        
+        <div className="hero-content">
+          <div className="hero-header">
+            <div className="hero-logo-text">
+              <span className="logo-hash">Hash</span>
+              <span className="logo-branch">branch</span>
+              <span className="logo-onboarding"> Onboarding</span>
+            </div>
+          </div>
+          <h1 className="hero-title">
+            <span className="title-prefix">Welcome to </span>
+            <AnimatedWord />
+            <span className="title-suffix">ASIC Hosting</span>
+          </h1>
+          <p>
+            Your journey from hardware ownership to profitable mining starts here. We'll guide you through our secure, streamlined process to get your ASICs deployed and hashing in our enterprise facility.
+          </p>
+        </div>
       </section>
 
       <div className="container">
